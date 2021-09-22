@@ -17,11 +17,22 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            zipAlignEnabled false
+            debuggable true
             minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            zipAlignEnabled true
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            ext.enableCrashlytics = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
