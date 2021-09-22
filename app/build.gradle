@@ -10,8 +10,13 @@ android {
         applicationId "com.chiragjn.template"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+
+        def versionMajor = 1
+        def versionMinor = 0
+        def versionPatch = 0
+
+        versionName buildVersionName(versionMajor, versionMinor, versionPatch)
+        versionCode buildVersionCode(versionMajor, versionMinor, versionPatch)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,6 +46,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+static def buildVersionName(versionMajor, versionMinor, versionPatch) {
+    return "${versionMajor}.${versionMinor}.${versionPatch}"
+}
+
+static def buildVersionCode(versionMajor, versionMinor, versionPatch) {
+    return versionMajor * 10**2 + versionMinor * 10**1 + versionPatch * 10**0
 }
 
 dependencies {
