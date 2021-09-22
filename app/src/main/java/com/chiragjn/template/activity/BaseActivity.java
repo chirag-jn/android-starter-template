@@ -1,4 +1,4 @@
-package com.chiragjn.template;
+package com.chiragjn.template.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

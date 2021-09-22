@@ -1,6 +1,8 @@
-package com.chiragjn.template;
+package com.chiragjn.template.activity;
 
 import android.os.Bundle;
+
+import com.chiragjn.template.R;
 
 public class MainActivity extends BaseActivity {
 
