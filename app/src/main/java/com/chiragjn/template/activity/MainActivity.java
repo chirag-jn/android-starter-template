@@ -1,10 +1,13 @@
 package com.chiragjn.template.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
-import com.chiragjn.template.R;
+import com.chiragjn.template.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity {
+
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +18,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     void bindView() {
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        binding.helloWorld.setVisibility(View.VISIBLE);
     }
 }
