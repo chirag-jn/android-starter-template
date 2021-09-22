@@ -50,6 +50,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    def googleServicesFile = file("google-services.json")
+    if (!googleServicesFile.exists()) {
+        project.logger.lifecycle('Please create app/google-services.json to communicate with Firebase.')
+    }
 }
 
 static def buildVersionName(versionMajor, versionMinor, versionPatch) {
