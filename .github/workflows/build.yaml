@@ -20,6 +20,9 @@ jobs:
       - name: Install NDK
         run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=${ANDROID_SDK_ROOT}
 
+      - name: Set up Firebase config
+        run: mv app/src/debug/google-services-debug.json app/src/debug/google-services.json
+
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
